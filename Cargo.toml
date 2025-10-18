@@ -1,7 +1,15 @@
 [package]
 name = "rust-web-trio"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+
 
 [dependencies]
-
+sqlx = { version = "0.8.6", features = ["runtime-tokio", "postgres"] }
+anyhow = "1.0.100"
+tokio = { version = "1.48.0", features = ["rt", "rt-multi-thread", "macros"] }
+tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+axum = "0.8.6"
+tracing = "0.1.41"
+tower-http = { version = "0.6", features = ["trace"] }
+serde = { version = "1.0.228", features = ["derive"] }
