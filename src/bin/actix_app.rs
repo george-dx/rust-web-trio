@@ -12,7 +12,7 @@ use tracing_subscriber::util::SubscriberInitExt;
 #[actix_web::main]
 async fn main() -> anyhow::Result<()> {
     tracing_subscriber::registry()
-        .with(tracing_subscriber::filter::LevelFilter::INFO) // global INFO+
+        .with(tracing_subscriber::filter::LevelFilter::INFO)
         .with(fmt::layer().with_target(false).compact())
         .init();
 

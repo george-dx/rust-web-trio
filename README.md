@@ -2,6 +2,15 @@
 
 This document explains how to use the project as a learning material for AXUM vs AXIOS vs ROCKET frameworks
 
+<!-- TOC -->
+* [RUST WEB TRIO: AXUM, AXIOS, ROCKET](#rust-web-trio-axum-axios-rocket)
+  * [Prerequisites](#prerequisites)
+  * [Testing the binaries](#testing-the-binaries-)
+    * [Axum](#axum-)
+    * [Axios](#axios-)
+    * [Rocket](#rocket)
+<!-- TOC -->
+
 ## Prerequisites
 
 Set DATABASE_URL using the following command:
@@ -17,20 +26,25 @@ cargo run --bin axum_app
 ```
 
 ### Axum 
+* ``GET /health``
 ```bash
 curl -i http://127.0.0.1:3000/health
 ```
 
+* ``POST /users``
 ```bash
 curl -i -X POST http://127.0.0.1:3000/users \
 -H "Content-Type: application/json" \
 -d '{"id":1,"name":"Joe"}'
 ```
 
+* ``GET /users``
 ```bash
 curl -i http://127.0.0.1:3000/users/1
 ```
 
 ### Axios 
+Same as for __Axum__ but on port `3001`
 
 ### Rocket
+Same as for __Axum__ but on port `8000`
