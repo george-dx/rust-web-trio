@@ -2,6 +2,11 @@ use sqlx::{Pool, Postgres};
 
 pub type AsyncPostgresConnectionPool = Pool<Postgres>;
 
+#[derive(Clone)]
+pub struct ApplicationState {
+    pub database_connection_pool: AsyncPostgresConnectionPool,
+}
+
 pub async fn create_connection_pool(
     database_url: &str,
     max_number_of_connections: u32,

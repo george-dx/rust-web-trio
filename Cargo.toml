@@ -1,7 +1,7 @@
 [package]
 name = "rust-web-trio"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 
 [dependencies]
@@ -13,3 +13,4 @@ axum = "0.8.6"
 tracing = "0.1.41"
 tower-http = { version = "0.6", features = ["trace"] }
 serde = { version = "1.0.228", features = ["derive"] }
+actix-web = "4.11.0"
