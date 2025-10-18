@@ -1,6 +1,5 @@
 use axum::extract::{Path, State};
-use axum::handler::Handler;
-use axum::http::{Request, StatusCode};
+use axum::http::StatusCode;
 use axum::routing::{get, post};
 use axum::{Json, Router};
 use rust_web_trio::common::database::{
@@ -13,10 +12,6 @@ use std::net::SocketAddr;
 use tokio::net::TcpListener;
 use tower_http::trace::TraceLayer;
 use tracing::Level;
-use tracing_subscriber::fmt::writer::{MakeWriterExt, WithMaxLevel};
-use tracing_subscriber::layer::SubscriberExt;
-use tracing_subscriber::util::SubscriberInitExt;
-use tracing_subscriber::{fmt, EnvFilter};
 
 #[derive(Clone)]
 struct ApplicationState {
